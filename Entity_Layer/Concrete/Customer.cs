@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Entity_Layer.Concrete
 {
-    internal class Customer
+    public class Customer
     {
     }
 }

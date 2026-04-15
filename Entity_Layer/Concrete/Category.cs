@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Entity_Layer.Concrete
 {
-    internal class Category
+    public class Category
     {
     }
 }
