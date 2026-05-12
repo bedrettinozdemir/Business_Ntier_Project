@@ -12,7 +12,7 @@ namespace Business_Layer.Fluent_Validation
         {
 
             RuleFor(x => x.Name).NotEmpty().WithMessage("Category name should be filled");
-            RuleFor(x => x.Name).MinimumLength(5).WithMessage("Category name should be minumum 5 length");
+           
         }
     }
 }

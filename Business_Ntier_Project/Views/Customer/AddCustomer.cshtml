@@ -1,0 +1,19 @@
+﻿@model Entity_Layer.Concrete.Customer
+@{
+    ViewData["Title"] = "AddCustomer";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<h1>AddCustomer</h1>
+
+<form method="post">
+
+    @Html.Label("Customer Name");
+    @Html.TextBoxFor(x=>x.Name, new{@class ="form-control"})
+ 
+    @Html.Label("Customer City")
+    @Html.TextBoxFor(x=>x.City, new{@class="form-control"})
+   
+    <button class="btn btn-primary" type="submit">Add Customer</button>
+</form>
+

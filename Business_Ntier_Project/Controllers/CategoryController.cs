@@ -2,53 +2,59 @@
 using Data_Access.EntityFramework;
 using Entity_Layer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 
 namespace Business_Ntier_Project.Controllers
 {
-    public class CustomerController : Controller
+   public class CategoryController : Controller
     {
-        CustomerManager cm = new CustomerManager(new EFCustomerDal());
+        CategoryManager cm = new CategoryManager(new EFCategoryDal());
         public IActionResult Index()
         {
-            
             var values = cm.TGetlist();
+
             return View(values);
+
         }
 
         [HttpGet]
-        public IActionResult AddCustomer()
+        public IActionResult AddCategory()
         {
+           
             return View();
-
         }
 
         [HttpPost]
-        public IActionResult AddCustomer (Customer c) 
+        public IActionResult AddCategory(Category c) 
         {
             cm.TInsert(c);
             return RedirectToAction("Index");
+            
         }
 
-        public IActionResult DeleteCustomer(int id) 
+        public IActionResult DeleteCategory(int id) 
         {
             var values = cm.TGetById(id);
+
             cm.TDelete(values);
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult UpdateCustomer(int id)
+        public IActionResult  UpdateCategory(int id) 
         {
             var values = cm.TGetById(id);
-            return View(values); 
+            return View(values);
+
         }
 
         [HttpPost]
-        public IActionResult UpdateCustomer(Customer c) 
+        public IActionResult UpdateCategory (Category c) 
         {
-            
             cm.TUpdate(c);
             return RedirectToAction("Index");
         }
+
     }
+    
 }

@@ -1,0 +1,17 @@
+﻿@model Entity_Layer.Concrete.Category
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<h1>UpdateCategory</h1>
+
+<form method ="post">
+    @Html.HiddenFor(x=>x.Id)
+
+    @Html.Label("Category Name");
+    @Html.TextBoxFor(x=>x.Name, new {@class="form-control"})
+    <br />
+    <button class="btn btn-success">Update</button>
+</form>
+

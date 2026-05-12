@@ -1,0 +1,18 @@
+﻿@model Entity_Layer.Concrete.Customer
+@{
+    ViewData["Title"] = "UpdateCustomer";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<h1>UpdateCustomer</h1>
+<form method="post">
+    @Html.HiddenFor(x=>x.Id)
+    <br/>
+    @Html.Label("Customer Name")
+    @Html.TextBoxFor(x=>x.Name, new {@class ="form-control"})
+    <br/>
+    @Html.Label("Customer City")
+    @Html.TextBoxFor(x=>x.City, new{@class= "form-control"})
+
+    <button class="btn btn-success">Update</button>
+</form>
